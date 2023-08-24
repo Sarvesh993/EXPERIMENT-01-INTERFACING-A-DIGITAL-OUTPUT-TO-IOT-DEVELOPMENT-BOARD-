@@ -1,8 +1,10 @@
 # EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD
 
-## Aim: To Interface a Digital output (LED) to ARM IOT development board and write a  program to blink an led 
-## Components required: STM32 CUBE IDE, ARM IOT development board,  STM programmer tool.
-## Theory 
+## Aim:
+To Interface a Digital output (LED) to ARM IOT development board and write a  program to blink an led 
+## Components required:
+STM32 CUBE IDE, ARM IOT development board,  STM programmer tool.
+## Theory:
 The full form of an ARM is an advanced reduced instruction set computer (RISC) machine, and it is a 32-bit processor architecture expanded by ARM holdings. The applications of an ARM processor include several microcontrollers as well as processors. The architecture of an ARM processor was licensed by many corporations for designing ARM processor-based SoC products and CPUs. This allows the corporations to manufacture their products using ARM architecture. Likewise, all main semiconductor companies will make ARM-based SOCs such as Samsung, Atmel, TI etc.
 
 What is an ARM7 Processor?
@@ -78,13 +80,35 @@ The main features of LPC2148 include the following.
 
 
 ## STM 32 CUBE PROGRAM :
-
+```c
+void led();  //Function declaration
+int main(void)
+{
+ while (1)
+  {
+	  led();
+  }
+  
+}
+void led()
+{
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+	HAL_Delay(3000);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+	HAL_Delay(3000);
+}
+```
 
 
 ## Output  :
+### LED ON:
+![image](https://github.com/Sarvesh993/EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/94881923/a3bb1746-339f-44f5-bbbd-5c418d05f0cb)
+
+
+### LED OFF:
+![image](https://github.com/Sarvesh993/EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD-/assets/94881923/1cfa1511-5f65-4d4b-bf5a-60240e1fabe9)
  
- 
- 
+
  
 ## Result :
 Interfacing a digital output with ARM microcontroller based IOT development is executed and the results are verified.
